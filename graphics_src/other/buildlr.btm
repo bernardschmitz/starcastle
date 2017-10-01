@@ -1,0 +1,27 @@
+
+set k=0
+do i=0 to 31
+   arj x laser.arj l%@instr[1,-2,00%i]*.tga
+   do j=1 to 5
+      ren l%@instr[1,-2,00%i]%j.tga la%@instr[3,-4,0000%k].tga
+      set k=%@inc[%k]
+   enddo
+enddo
+makegrid 112 112 32 5 la%%04d.tga d:\tmp\la.tga
+del /y la*.tga
+alch16 -fpal.pal -d0 -z4 -o d:\tmp\la.tga -p
+del /y d:\tmp\la.tga
+
+rem set k=0
+rem do i=32 to 63
+rem    arj x laser.arj l%@instr[1,-2,00%i]*.tga
+rem    do j=1 to 5
+rem       ren l%@instr[1,-2,00%i]%j.tga lb%@instr[3,-4,0000%k].tga
+rem       set k=%@inc[%k]
+rem    enddo
+rem enddo
+rem makegrid 112 112 32 5 lb%%04d.tga d:\tmp\lb.tga
+rem del /y lb*.tga
+rem alch16 -fpal.pal -d0 -z4 -o d:\tmp\lb.tga -p
+rem del /y d:\tmp\lb.tga
+

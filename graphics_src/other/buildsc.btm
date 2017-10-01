@@ -1,0 +1,53 @@
+
+set k=0
+do i=0 to 15
+   arj x sc.arj sc%@instr[1,-2,00%i]*.tga
+   do j=0 to 15
+      ren sc%@instr[1,-2,00%i]%@instr[1,-2,00%j].tga sca%@instr[3,-4,0000%k].tga
+      set k=%@inc[%k]
+   enddo
+enddo
+makegrid 112 112 32 8 sca%%04d.tga d:\tmp\sca.tga
+del /y sca*.tga
+alch16 -fpal.pal -d0 -z4 -o d:\tmp\sca.tga -p
+del /y d:\tmp\sca.tga
+
+set k=0
+do i=16 to 31
+   arj x sc.arj sc%@instr[1,-2,00%i]*.tga
+   do j=0 to 15
+      ren sc%@instr[1,-2,00%i]%@instr[1,-2,00%j].tga scb%@instr[3,-4,0000%k].tga
+      set k=%@inc[%k]
+   enddo
+enddo
+makegrid 112 112 32 8 scb%%04d.tga d:\tmp\scb.tga
+del /y scb*.tga
+alch16 -fpal.pal -d0 -z4 -o d:\tmp\scb.tga -p
+del /y d:\tmp\scb.tga
+
+set k=0
+do i=32 to 47
+   arj x sc.arj sc%@instr[1,-2,00%i]*.tga
+   do j=0 to 15
+      ren sc%@instr[1,-2,00%i]%@instr[1,-2,00%j].tga scc%@instr[3,-4,0000%k].tga
+      set k=%@inc[%k]
+   enddo
+enddo
+makegrid 112 112 32 8 scc%%04d.tga d:\tmp\scc.tga
+del /y scc*.tga
+alch16 -fpal.pal -d0 -z4 -o d:\tmp\scc.tga -p
+del /y d:\tmp\scc.tga
+
+set k=0
+do i=48 to 63
+   arj x sc.arj sc%@instr[1,-2,00%i]*.tga
+   do j=0 to 15
+      ren sc%@instr[1,-2,00%i]%@instr[1,-2,00%j].tga scd%@instr[3,-4,0000%k].tga
+      set k=%@inc[%k]
+   enddo
+enddo
+makegrid 112 112 32 8 scd%%04d.tga d:\tmp\scd.tga
+del /y scd*.tga
+alch16 -fpal.pal -d0 -z4 -o d:\tmp\scd.tga -p
+del /y d:\tmp\scd.tga
+

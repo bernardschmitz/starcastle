@@ -1,0 +1,40 @@
+
+rem for %%i in (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31) do call doshoot %%i
+rem for %%i in (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31) do call dothrust %%i
+
+rem povray ship.ini +kff31
+rem povray castle.ini +kff63
+
+rem povray wa.ini +kff63 -a
+rem povray wad.ini +kff63 -a
+
+rem call dta ship.arj /oship.fli
+rem call dta castle.arj /ocastle.fli
+
+rem call dta sfire.arj /osfire.fli
+rem call dta smove.arj /osmove.fli
+
+rem do i = 0 to 63
+rem    call dosc %@instr[1,-2,00%i]
+rem enddo
+
+rem do i = 0 to 31
+rem    call dolaser %@instr[1,-2,00%i]
+rem    arj d laser.arj l%@instr[1,-2,00%i]0.tga
+rem enddo
+
+cls white on blue
+drawbox 5 10 15 67 2 bright yellow on green fill green zoom shad
+scrput 7 12 bright white on green Rendering the walls...
+
+rem povray owa.ini +kff63
+rem povray owb.ini +kff63
+rem povray mwa.ini +kff63
+rem povray mwb.ini +kff63
+povray iwa.ini +kff63
+povray iwb.ini +kff63
+
+cls white on blue
+drawbox 5 10 15 67 2 bright yellow on green fill green zoom shad
+scrput 7 12 bright white on green Finished rendering the walls!
+
